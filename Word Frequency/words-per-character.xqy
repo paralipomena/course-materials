@@ -5,7 +5,6 @@ xquery version "3.0";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
  
 let $doc := fn:doc("db/shakespeare/Ado.xml")
-let $total-words := fn:count(//tei:w/text())
 for $character in fn:distinct-values($doc//tei:sp/tei:speaker/tei:w/text())
 let $count := fn:count(
     for $speaker in $doc//tei:sp
